@@ -59,13 +59,13 @@
       <div>
         <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Fondo Sierras de Tandil</label>
         <div class="grid grid-cols-2 gap-2">
-          <button type="button" onclick="setFondo('fondo-sierras-16-9.jpg')" class="p-2 rounded-lg border border-slate-700 hover:border-cyan-400 text-left text-xs bg-slate-800/40 text-slate-300 transition">
+          <button type="button" onclick="setFondo('assets/social/fondo-sierras-16-9.jpg')" class="p-2 rounded-lg border border-slate-700 hover:border-cyan-400 text-left text-xs bg-slate-800/40 text-slate-300 transition">
             🌅 Atardecer Dorado
           </button>
-          <button type="button" onclick="setFondo('fondo-sierras-1-1.jpg')" class="p-2 rounded-lg border border-slate-700 hover:border-cyan-400 text-left text-xs bg-slate-800/40 text-slate-300 transition">
+          <button type="button" onclick="setFondo('assets/social/fondo-sierras-1-1.jpg')" class="p-2 rounded-lg border border-slate-700 hover:border-cyan-400 text-left text-xs bg-slate-800/40 text-slate-300 transition">
             🌄 Rocas & Valle
           </button>
-          <button type="button" onclick="setFondo('portada-facebook-crepusculo.jpg')" class="p-2 rounded-lg border border-slate-700 hover:border-cyan-400 text-left text-xs bg-slate-800/40 text-slate-300 transition">
+          <button type="button" onclick="setFondo('assets/social/portada-facebook-crepusculo.jpg')" class="p-2 rounded-lg border border-slate-700 hover:border-cyan-400 text-left text-xs bg-slate-800/40 text-slate-300 transition">
             🌌 Crepúsculo Azul
           </button>
           <label class="p-2 rounded-lg border border-dashed border-slate-700 hover:border-cyan-400 text-center text-xs bg-slate-800/20 text-slate-400 hover:text-cyan-400 cursor-pointer transition flex items-center justify-center">
@@ -148,7 +148,7 @@
     const ctx = canvas.getContext('2d');
 
     let currentFormato = 'facebook'; // 'facebook', 'instagram', 'story'
-    let currentFondoSrc = 'fondo-sierras-16-9.jpg';
+    let currentFondoSrc = 'assets/social/fondo-sierras-16-9.jpg';
     let currentPosicion = 'derecha';
     let imgFondo = new Image();
     let imgLogo = new Image();
@@ -157,7 +157,7 @@
     imgLogo.crossOrigin = "anonymous";
 
     // Cargar recursos iniciales
-    imgLogo.src = 'logo-transparent-hd.png';
+    imgLogo.src = 'assets/social/logo-transparent-hd.png';
     imgFondo.src = currentFondoSrc;
 
     imgFondo.onload = () => render();
@@ -172,10 +172,10 @@
 
       if (fmt === 'facebook') {
         setPosicion('derecha');
-        currentFondoSrc = 'fondo-sierras-16-9.jpg';
+        currentFondoSrc = 'assets/social/fondo-sierras-16-9.jpg';
       } else if (fmt === 'instagram') {
         setPosicion('centro');
-        currentFondoSrc = 'fondo-sierras-1-1.jpg';
+        currentFondoSrc = 'assets/social/fondo-sierras-1-1.jpg';
       } else {
         setPosicion('centro');
       }
