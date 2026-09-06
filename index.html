@@ -97,11 +97,11 @@
         "priceRange": "$$",
         "knowsAbout": [
           "Desarrollo de Software a Medida",
-          "Automatización Operativa",
-          "Arquitectura de Datos Relacionales",
-          "Sistemas Web Empresariales",
-          "Integraciones de APIs y Webhooks",
-          "Infraestructura Cloud y Docker"
+          "Automatización de Procesos Empresariales",
+          "Sistemas de Gestión Comercial",
+          "Sistemas Web para Empresas",
+          "Integración de Sistemas y Facturación",
+          "Seguridad y Respaldo de Datos"
         ],
         "sameAs": [
           "https://github.com/jmrodev/tandillabs",
@@ -173,16 +173,6 @@
         linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
     }
-    /* Modal smooth animations */
-    #tech-modal.open {
-      opacity: 1;
-      visibility: visible;
-      pointer-events: auto;
-    }
-    #tech-modal.open .modal-panel {
-      transform: scale(1);
-      opacity: 1;
-    }
     /* Subtle Scroll Reveal (Restrained, smooth) */
     .reveal-on-scroll {
       opacity: 0;
@@ -224,22 +214,16 @@
       <!-- Desktop Nav -->
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300" aria-label="Navegación principal">
         <a href="#soluciones" class="hover:text-cyan-400 transition py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded">Soluciones</a>
-        <a href="#metodologia" class="hover:text-cyan-400 transition py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded">Metodología</a>
+        <a href="#metodologia" class="hover:text-cyan-400 transition py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded">Cómo Trabajamos</a>
         <a href="#contacto" class="hover:text-cyan-400 transition py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded">Contacto</a>
       </nav>
 
       <!-- Nav Actions (Desktop + Mobile Trigger) -->
       <div class="flex items-center gap-2 sm:gap-3">
-        <!-- Technologies Button (Modal Trigger) -->
-        <button onclick="openTechModal()" type="button" class="inline-flex items-center gap-2 px-3.5 py-2.5 rounded-lg text-xs font-semibold border border-slate-700 hover:border-cyan-500/50 bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-cyan-400 transition shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400" title="Consultar especificaciones y tecnologías aplicadas">
-          <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
-          <span>Tecnologías</span>
-        </button>
-
         <!-- Direct WhatsApp CTA -->
-        <a href="https://wa.me/5492494523129?text=Hola%20Tandil%20Labs,%20deseo%20realizar%20una%20consulta%20para%20mi%20empresa" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold px-4 py-2.5 rounded-full text-xs sm:text-sm transition-all shadow-md shadow-cyan-500/25 hover:shadow-cyan-500/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400">
-          <span>Contactar</span>
-          <svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.087-.177.182-.076.355.101.173.45 1.011 1.092 1.583.824.734 1.517.962 1.734 1.07.217.108.347.094.477-.058.13-.151.55-.636.694-.853.145-.217.289-.181.492-.108.202.072 1.285.606 1.502.714.217.108.361.163.414.253.053.09.053.52-.091.925z"/></svg>
+        <a href="https://wa.me/5492494523129?text=Hola%20Tandil%20Labs,%20deseo%20realizar%20una%20consulta%20para%20mi%20empresa" target="_blank" rel="noopener" class="hidden sm:inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 font-bold px-5 py-2.5 rounded-full text-xs sm:text-sm transition-all shadow-md shadow-cyan-500/25 hover:shadow-cyan-500/40 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400">
+          <span>Contactar por WhatsApp</span>
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.087-.177.182-.076.355.101.173.45 1.011 1.092 1.583.824.734 1.517.962 1.734 1.07.217.108.347.094.477-.058.13-.151.55-.636.694-.853.145-.217.289-.181.492-.108.202.072 1.285.606 1.502.714.217.108.361.163.414.253.053.09.053.52-.091.925z"/></svg>
         </a>
 
         <!-- Mobile Menu Toggle Button (UI/UX enhancement) -->
@@ -252,7 +236,7 @@
     <!-- Mobile Collapsible Navigation Drawer -->
     <div id="mobile-nav" class="hidden md:hidden border-t border-brand-border bg-brand-dark/95 backdrop-blur-xl px-4 pt-3 pb-5 space-y-2">
       <a href="#soluciones" onclick="closeMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800/80 hover:text-cyan-400 transition">Soluciones</a>
-      <a href="#metodologia" onclick="closeMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800/80 hover:text-cyan-400 transition">Metodología</a>
+      <a href="#metodologia" onclick="closeMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800/80 hover:text-cyan-400 transition">Cómo Trabajamos</a>
       <a href="#contacto" onclick="closeMobileMenu()" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-300 hover:bg-slate-800/80 hover:text-cyan-400 transition">Contacto</a>
       <div class="pt-2">
         <a href="https://wa.me/5492494523129?text=Hola%20Tandil%20Labs,%20deseo%20realizar%20una%20consulta%20para%20mi%20empresa" target="_blank" rel="noopener" class="flex items-center justify-center gap-2 w-full bg-gradient-to-r from-cyan-500 to-blue-600 text-slate-950 font-bold px-4 py-2.5 rounded-xl text-sm shadow-md">
@@ -300,42 +284,35 @@
           </a>
         </div>
 
-        <!-- Technical Specification Link (Subtle secondary path) -->
-        <div class="mt-6">
-          <button onclick="openTechModal()" type="button" class="text-xs text-slate-400 hover:text-cyan-400 transition underline underline-offset-4 decoration-slate-600 hover:decoration-cyan-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded p-1">
-            ¿Desea revisar nuestra arquitectura técnica? Ver Tecnologías &rarr;
-          </button>
-        </div>
-
-        <!-- Animated Metrics Grid (Cifras con animación suave) -->
-        <div id="metrics-grid" class="mt-16 pt-10 border-t border-brand-border/60 max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center reveal-on-scroll">
+        <!-- Animated Metrics Grid (Cifras claras para empresas) -->
+        <div id="metrics-grid" class="mt-14 pt-10 border-t border-brand-border/60 max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 text-center reveal-on-scroll">
           <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/50 hover:border-cyan-500/40 transition group">
             <div class="text-3xl sm:text-4xl font-extrabold font-mono text-cyan-400">
               +<span class="counter" data-target="99.9" data-decimals="1">0</span>%
             </div>
             <div class="text-xs sm:text-sm font-bold text-white mt-1">Disponibilidad</div>
-            <div class="text-[10px] text-slate-400 uppercase tracking-wider mt-0.5">Continuidad Operativa</div>
+            <div class="text-[10px] text-slate-400 uppercase tracking-wider mt-0.5">Sistemas siempre en línea</div>
           </div>
           <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/50 hover:border-cyan-500/40 transition group">
             <div class="text-3xl sm:text-4xl font-extrabold font-mono text-white">
               <span class="counter" data-target="100" data-decimals="0">0</span>%
             </div>
-            <div class="text-xs sm:text-sm font-bold text-white mt-1">Código Propio</div>
-            <div class="text-[10px] text-slate-400 uppercase tracking-wider mt-0.5">Sin Licencias Cautivas</div>
+            <div class="text-xs sm:text-sm font-bold text-white mt-1">A su Medida</div>
+            <div class="text-[10px] text-slate-400 uppercase tracking-wider mt-0.5">Sin licencias mensuales fijas</div>
           </div>
           <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/50 hover:border-cyan-500/40 transition group">
             <div class="text-3xl sm:text-4xl font-extrabold font-mono text-cyan-400">
-              &lt;<span class="counter" data-target="120" data-decimals="0">0</span>ms
+              <span class="counter" data-target="0" data-decimals="0">0</span>
             </div>
-            <div class="text-xs sm:text-sm font-bold text-white mt-1">Tiempo de Respuesta</div>
-            <div class="text-[10px] text-slate-400 uppercase tracking-wider mt-0.5">Arquitectura Eficiente</div>
+            <div class="text-xs sm:text-sm font-bold text-white mt-1">Fricción Operativa</div>
+            <div class="text-[10px] text-slate-400 uppercase tracking-wider mt-0.5">Tareas automáticas y ágiles</div>
           </div>
           <div class="p-4 rounded-xl bg-slate-900/40 border border-slate-800/50 hover:border-cyan-500/40 transition group">
             <div class="text-3xl sm:text-4xl font-extrabold font-mono text-white">
               <span class="counter" data-target="24" data-decimals="0">0</span>/7
             </div>
-            <div class="text-xs sm:text-sm font-bold text-white mt-1">Monitoreo & Soporte</div>
-            <div class="text-[10px] text-slate-400 uppercase tracking-wider mt-0.5">Desde Tandil al País</div>
+            <div class="text-xs sm:text-sm font-bold text-white mt-1">Soporte & Asistencia</div>
+            <div class="text-[10px] text-slate-400 uppercase tracking-wider mt-0.5">Desde Tandil al país</div>
           </div>
         </div>
       </div>
@@ -351,10 +328,10 @@
           <p class="mt-4 text-slate-400 text-base leading-relaxed">Desarrollamos soluciones sólidas, seguras y de fácil adopción, concebidas para optimizar el rendimiento diario de su organización.</p>
         </div>
 
-        <!-- BENTO GRID (Componente interactivo sobrio y moderno) -->
+        <!-- BENTO GRID (Visualizador interactivo simple y de alto impacto para negocios) -->
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
 
-          <!-- Bento Card 1: Consola & Pipeline de Automatización en Vivo (Span 2 cols) -->
+          <!-- Bento Card 1: Automatización de Tareas Comerciales (Span 2 cols) -->
           <div class="lg:col-span-2 p-7 sm:p-8 rounded-2xl bg-brand-card border border-brand-border hover:border-cyan-500/40 transition-all duration-300 shadow-xl shadow-black/40 flex flex-col justify-between reveal-on-scroll">
             <div>
               <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
@@ -363,40 +340,62 @@
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                   </div>
                   <div>
-                    <h3 class="text-xl font-bold text-white">Automatización de Procesos & Pipelines</h3>
-                    <p class="text-xs text-slate-400">Ejecución en tiempo real sin intervención manual</p>
+                    <h3 class="text-xl font-bold text-white">Automatización de Tareas y Procesos</h3>
+                    <p class="text-xs text-slate-400">Su negocio funcionando en tiempo real sin tareas repetitivas</p>
                   </div>
                 </div>
-                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-[11px] font-mono text-cyan-300">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/60 border border-cyan-500/30 text-xs font-semibold text-cyan-300">
                   <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-                  MOTOR ASÍNCRONO ACTIVO
+                  OPERACIÓN AUTOMÁTICA
                 </div>
               </div>
 
-              <!-- Interactive Terminal Component -->
-              <div class="rounded-xl bg-slate-950/90 border border-slate-800/80 p-4 font-mono text-xs text-slate-300 shadow-inner">
-                <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-800/60 text-slate-400 text-[11px]">
-                  <div class="flex items-center gap-1.5">
-                    <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
-                    <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
-                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
-                    <span class="ml-2 text-slate-400">tandil-labs ~ engine.pipeline</span>
+              <!-- Interactive Business Workflow Simulator -->
+              <div class="rounded-xl bg-slate-950/80 border border-slate-800/80 p-5 shadow-inner">
+                <div class="flex items-center justify-between pb-3 mb-3 border-b border-slate-800/60">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span>
+                    <span class="text-xs font-semibold text-slate-300">Ejemplo en vivo: circuito automático de ventas y atención</span>
                   </div>
-                  <button onclick="runPipelineSimulation()" type="button" class="px-2.5 py-1 rounded bg-cyan-950 hover:bg-cyan-900 border border-cyan-500/40 text-cyan-300 text-[10px] font-semibold transition active:scale-95 flex items-center gap-1.5" title="Simular flujo">
-                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/></svg>
-                    <span>Simular Evento</span>
+                  <button onclick="runWorkflowDemo()" type="button" class="px-3 py-1.5 rounded-lg bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/40 text-cyan-300 text-xs font-bold transition active:scale-95 flex items-center gap-1.5" title="Ver cómo se procesa una operación automática">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/></svg>
+                    <span>Probar Simulación</span>
                   </button>
                 </div>
-                <div id="terminal-output" class="space-y-1.5 text-slate-300">
-                  <div class="flex items-center gap-2"><span class="text-emerald-400">✓</span> <span class="text-slate-400">[01. Ingress]</span> Webhook recibido: Transacción comercial #8492</div>
-                  <div class="flex items-center gap-2"><span class="text-emerald-400">✓</span> <span class="text-slate-400">[02. Postgres]</span> Bloqueo ACID verificado & guardado en 8ms</div>
-                  <div class="flex items-center gap-2"><span class="text-cyan-400">✓</span> <span class="text-slate-400">[03. Despacho]</span> Notificación idempotente enviada vía WhatsApp API</div>
-                  <div id="terminal-status" class="text-slate-400 text-[11px] pt-1 text-cyan-300/80 font-mono">Estado: Esperando próximo evento en cola... (0 pendientes)</div>
+                <div id="workflow-steps" class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+                  <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800 text-slate-300 flex flex-col justify-between">
+                    <div class="flex items-center gap-2 font-bold text-white mb-1">
+                      <span class="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-[10px]">1</span>
+                      <span>Ingreso del Pedido</span>
+                    </div>
+                    <p class="text-slate-400 text-[11px] leading-snug">Consulta o pedido registrado al instante por WhatsApp o web.</p>
+                    <span class="text-emerald-400 text-[10px] font-semibold mt-2">✓ Recibido al instante</span>
+                  </div>
+                  <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800 text-slate-300 flex flex-col justify-between">
+                    <div class="flex items-center gap-2 font-bold text-white mb-1">
+                      <span class="w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-[10px]">2</span>
+                      <span>Gestión Automática</span>
+                    </div>
+                    <p class="text-slate-400 text-[11px] leading-snug">Se descuenta el stock, se genera la orden y se registra la venta.</p>
+                    <span class="text-emerald-400 text-[10px] font-semibold mt-2">✓ Sin errores manuales</span>
+                  </div>
+                  <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800 text-slate-300 flex flex-col justify-between">
+                    <div class="flex items-center gap-2 font-bold text-white mb-1">
+                      <span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-[10px]">3</span>
+                      <span>Aviso al Cliente</span>
+                    </div>
+                    <p class="text-slate-400 text-[11px] leading-snug">El cliente recibe confirmación y el equipo operativo la orden para despachar.</p>
+                    <span class="text-cyan-400 text-[10px] font-semibold mt-2">✓ Respuesta inmediata</span>
+                  </div>
+                </div>
+                <div id="workflow-status" class="mt-3 pt-2.5 border-t border-slate-800/60 flex flex-wrap items-center justify-between gap-2 text-[11px] text-slate-400">
+                  <span>Estado: <strong class="text-emerald-400">Listo para operar</strong></span>
+                  <span class="text-cyan-300">Resultado: Horas de trabajo manual ahorradas todos los días</span>
                 </div>
               </div>
             </div>
             <p class="text-slate-400 text-xs sm:text-sm mt-4 leading-relaxed">
-              Transformamos tareas administrativas repetitivas en flujos automatizados blindados que no duermen ni cometen errores.
+              Deje de copiar y pegar datos entre planillas o responder lo mismo decenas de veces al día. Diseñamos circuitos automatizados que ordenan su empresa de punta a punta.
             </p>
           </div>
 
@@ -408,53 +407,55 @@
               </div>
               <h3 class="text-lg font-bold text-white mb-2">Sistemas de Gestión a Medida</h3>
               <p class="text-slate-400 text-xs leading-relaxed mb-4">
-                Plataformas creadas exactamente con las reglas de su empresa, sin pagar licencias mensuales por módulos que no usa.
+                Plataformas creadas exactamente con las reglas de su empresa, sin pagar licencias mensuales en dólares por herramientas genéricas que no usa.
               </p>
               
               <!-- Mini UI Mock -->
-              <div class="p-3 rounded-lg bg-slate-950/70 border border-slate-800 space-y-2 font-mono text-[11px]">
+              <div class="p-3.5 rounded-lg bg-slate-950/70 border border-slate-800 space-y-2 text-xs">
                 <div class="flex justify-between text-slate-300">
-                  <span>Módulo Operativo</span>
-                  <span class="text-emerald-400 font-bold">100% Calibrado</span>
+                  <span class="font-medium">Panel de Control</span>
+                  <span class="text-emerald-400 font-bold">100% Personalizado</span>
                 </div>
-                <div class="w-full bg-slate-800 rounded-full h-1.5 overflow-hidden">
-                  <div class="bg-blue-500 h-full rounded-full" style="width: 85%"></div>
+                <div class="w-full bg-slate-800 rounded-full h-2 overflow-hidden">
+                  <div class="bg-blue-500 h-full rounded-full" style="width: 100%"></div>
                 </div>
-                <div class="flex justify-between text-slate-400 text-[10px]">
-                  <span>Ventas & Stock</span>
+                <div class="flex justify-between text-slate-400 text-[11px]">
+                  <span>Ventas, Stock & Clientes</span>
                   <span>Sin software genérico</span>
                 </div>
               </div>
             </div>
-            <span class="text-xs text-blue-400/80 font-semibold mt-4 inline-flex items-center gap-1">Arquitectura propietaria &rarr;</span>
+            <span class="text-xs text-blue-400/90 font-semibold mt-4 inline-flex items-center gap-1">Propiedad exclusiva de su empresa &rarr;</span>
           </div>
 
-          <!-- Bento Card 3: Centralización de Información & APIs (Span 1 col) -->
+          <!-- Bento Card 3: Centralización de Información (Span 1 col) -->
           <div class="p-7 sm:p-8 rounded-2xl bg-brand-card border border-brand-border hover:border-emerald-500/40 transition-all duration-300 shadow-xl shadow-black/40 flex flex-col justify-between reveal-on-scroll delay-200">
             <div>
               <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-6">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/></svg>
               </div>
-              <h3 class="text-lg font-bold text-white mb-2">Centralización de Información</h3>
+              <h3 class="text-lg font-bold text-white mb-2">Toda su Información en un Solo Lugar</h3>
               <p class="text-slate-400 text-xs leading-relaxed mb-4">
-                Conecte su facturación, CRM, inventario y canales de clientes en una única base de datos sin planillas dispersas.
+                Conecte su facturación, canales de venta, inventario y clientes sin depender de planillas de cálculo dispersas.
               </p>
 
-              <!-- Mini API Bridge visual -->
-              <div class="p-3 rounded-lg bg-slate-950/70 border border-slate-800 space-y-1.5 font-mono text-[10px]">
+              <!-- Mini visual -->
+              <div class="p-3.5 rounded-lg bg-slate-950/70 border border-slate-800 space-y-2 text-xs">
                 <div class="flex items-center justify-between text-slate-300">
-                  <span>REST API & Webhooks</span>
-                  <span class="text-emerald-400">Conectado</span>
+                  <span class="font-medium">Conexión de Canales</span>
+                  <span class="text-emerald-400 font-semibold">Sincronizado</span>
                 </div>
-                <div class="text-slate-400 flex items-center gap-1">
-                  <span class="text-cyan-400">&bull;</span> AFIP / Facturación &bull; CRM &bull; WhatsApp
+                <div class="text-slate-400 text-[11px] flex flex-wrap items-center gap-1.5">
+                  <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-slate-300">Facturación</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-slate-300">WhatsApp</span>
+                  <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-slate-300">Stock</span>
                 </div>
               </div>
             </div>
-            <span class="text-xs text-emerald-400/80 font-semibold mt-4 inline-flex items-center gap-1">Sincronización bidireccional &rarr;</span>
+            <span class="text-xs text-emerald-400/90 font-semibold mt-4 inline-flex items-center gap-1">Control total de su negocio &rarr;</span>
           </div>
 
-          <!-- Bento Card 4: Continuidad, Infraestructura & Linux Hardening (Span 2 cols) -->
+          <!-- Bento Card 4: Seguridad, Respaldo y Soporte (Span 2 cols) -->
           <div class="lg:col-span-2 p-7 sm:p-8 rounded-2xl bg-brand-card border border-brand-border hover:border-purple-500/40 transition-all duration-300 shadow-xl shadow-black/40 flex flex-col justify-between reveal-on-scroll delay-300">
             <div>
               <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
@@ -463,34 +464,34 @@
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
                   </div>
                   <div>
-                    <h3 class="text-xl font-bold text-white">Continuidad Operativa & Resguardo de Datos</h3>
-                    <p class="text-xs text-slate-400">Servidores Linux dedicados, contenedores Docker y copias de seguridad encriptadas</p>
+                    <h3 class="text-xl font-bold text-white">Seguridad, Respaldo y Asistencia Directa</h3>
+                    <p class="text-xs text-slate-400">La tranquilidad de saber que sus datos están resguardados y atendidos por profesionales</p>
                   </div>
                 </div>
               </div>
 
-              <!-- Metrics live bar -->
+              <!-- Human metrics grid -->
               <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
-                <div class="p-3 rounded-lg bg-slate-950/70 border border-slate-800/80">
-                  <div class="text-[10px] text-slate-400 uppercase font-mono">Backups</div>
-                  <div class="text-sm font-bold text-emerald-400 font-mono mt-0.5">Automáticos 24h</div>
+                <div class="p-3.5 rounded-lg bg-slate-950/70 border border-slate-800/80">
+                  <div class="text-[11px] text-slate-400 uppercase tracking-wider">Copias de Seguridad</div>
+                  <div class="text-sm font-bold text-emerald-400 mt-1">Automáticas diarias</div>
                 </div>
-                <div class="p-3 rounded-lg bg-slate-950/70 border border-slate-800/80">
-                  <div class="text-[10px] text-slate-400 uppercase font-mono">Seguridad</div>
-                  <div class="text-sm font-bold text-white font-mono mt-0.5">TLS 1.3 / SSH</div>
+                <div class="p-3.5 rounded-lg bg-slate-950/70 border border-slate-800/80">
+                  <div class="text-[11px] text-slate-400 uppercase tracking-wider">Protección</div>
+                  <div class="text-sm font-bold text-white mt-1">Datos seguros</div>
                 </div>
-                <div class="p-3 rounded-lg bg-slate-950/70 border border-slate-800/80">
-                  <div class="text-[10px] text-slate-400 uppercase font-mono">Aislamiento</div>
-                  <div class="text-sm font-bold text-cyan-400 font-mono mt-0.5">Docker Stacks</div>
+                <div class="p-3.5 rounded-lg bg-slate-950/70 border border-slate-800/80">
+                  <div class="text-[11px] text-slate-400 uppercase tracking-wider">Acceso</div>
+                  <div class="text-sm font-bold text-cyan-400 mt-1">PC, tablet y celular</div>
                 </div>
-                <div class="p-3 rounded-lg bg-slate-950/70 border border-slate-800/80">
-                  <div class="text-[10px] text-slate-400 uppercase font-mono">Soporte</div>
-                  <div class="text-sm font-bold text-purple-400 font-mono mt-0.5">Directo & Humano</div>
+                <div class="p-3.5 rounded-lg bg-slate-950/70 border border-slate-800/80">
+                  <div class="text-[11px] text-slate-400 uppercase tracking-wider">Soporte Local</div>
+                  <div class="text-sm font-bold text-purple-400 mt-1">Directo y humano</div>
                 </div>
               </div>
             </div>
             <p class="text-slate-400 text-xs sm:text-sm mt-4 leading-relaxed">
-              Trato directo sin intermediarios, con asistencia profesional y resguardo proactivo para que su empresa nunca se detenga.
+              Cero intermediarios ni contestadores automáticos. Habla directamente con nosotros, con asistencia profesional y resguardo proactivo para que su empresa nunca se detenga.
             </p>
           </div>
 
@@ -498,57 +499,56 @@
       </div>
     </section>
 
-    <!-- ================= METODOLOGÍA CORPORATIVA ================= -->
-    <!-- Added scroll-mt-24 for seamless jump link scrolling -->
+    <!-- ================= CÓMO TRABAJAMOS ================= -->
     <section id="metodologia" class="py-24 relative overflow-hidden scroll-mt-24">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center max-w-3xl mx-auto mb-16">
-          <h2 class="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-3">Metodología de Trabajo</h2>
-          <p class="text-3xl sm:text-4xl font-extrabold text-white">Un proceso estructurado, transparente y predecible</p>
-          <p class="mt-4 text-slate-400 text-base">Trabajamos bajo etapas claras para garantizar que el resultado final responda exactamente a las necesidades de su empresa.</p>
+          <h2 class="text-xs font-bold uppercase tracking-widest text-cyan-400 mb-3">Cómo Trabajamos</h2>
+          <p class="text-3xl sm:text-4xl font-extrabold text-white">Un proceso simple, claro y paso a paso</p>
+          <p class="mt-4 text-slate-400 text-base">Usted sabe con certeza qué esperar en cada etapa, con resultados tangibles desde el primer momento.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div class="relative p-8 rounded-2xl bg-brand-card/70 border border-brand-border reveal-on-scroll">
             <div class="text-5xl font-extrabold text-slate-800 mb-4" aria-hidden="true">01</div>
-            <h3 class="text-lg font-bold text-white mb-2">Relevamiento & Consultoría</h3>
+            <h3 class="text-lg font-bold text-white mb-2">Entendemos su Negocio</h3>
             <p class="text-slate-400 text-sm leading-relaxed">
-              Analizamos en profundidad sus procesos actuales para dimensionar una solución precisa, eficiente y con retorno tangible de inversión.
+              Conversamos sobre el día a día de su empresa, identificamos dónde se pierde tiempo y definimos una solución que simplifique su trabajo.
             </p>
           </div>
 
           <div class="relative p-8 rounded-2xl bg-brand-card/70 border border-brand-border reveal-on-scroll delay-100">
             <div class="text-5xl font-extrabold text-slate-800 mb-4" aria-hidden="true">02</div>
-            <h3 class="text-lg font-bold text-white mb-2">Desarrollo & Validación por Fases</h3>
+            <h3 class="text-lg font-bold text-white mb-2">Diseñamos la Solución</h3>
             <p class="text-slate-400 text-sm leading-relaxed">
-              Construcción iterativa con instancias periódicas de prueba, permitiendo a su equipo evaluar y ajustar el sistema en marcha real antes del lanzamiento.
+              Construimos el sistema a medida y se lo mostramos en marcha para que usted y su equipo puedan probarlo y confirmar que cumple sus expectativas.
             </p>
           </div>
 
           <div class="relative p-8 rounded-2xl bg-brand-card/70 border border-brand-border reveal-on-scroll delay-200">
             <div class="text-5xl font-extrabold text-slate-800 mb-4" aria-hidden="true">03</div>
-            <h3 class="text-lg font-bold text-white mb-2">Puesta en Producción & Capacitación</h3>
+            <h3 class="text-lg font-bold text-white mb-2">Puesta en Marcha & Soporte</h3>
             <p class="text-slate-400 text-sm leading-relaxed">
-              Despliegue ordenado, inducción detallada a los usuarios de su empresa y disponibilidad técnica continua para acompañar el día a día.
+              Acompañamos a su personal para que lo adopten con total facilidad y quedamos siempre a su lado para brindar asistencia continua.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ================= BANNER: ENLACE A TECNOLOGÍAS ================= -->
+    <!-- ================= BANNER DE CONSULTA DIRECTA ================= -->
     <section class="py-12 bg-brand-card/20 border-t border-brand-border">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="p-8 rounded-2xl border border-slate-800 bg-slate-950/60 flex flex-col md:flex-row items-center justify-between gap-6 reveal-on-scroll">
           <div class="space-y-1 text-center md:text-left">
-            <div class="text-xs font-mono uppercase tracking-widest text-cyan-400 font-semibold">Para Responsables Técnicos & CTOs</div>
-            <h4 class="text-lg font-bold text-white">¿Requiere revisar nuestra arquitectura de ingeniería?</h4>
-            <p class="text-sm text-slate-400 max-w-xl">Acceda a las especificaciones formales de arquitectura de software, bases de datos relacionales, entornos contenerizados y seguridad.</p>
+            <div class="text-xs uppercase tracking-widest text-cyan-400 font-semibold">Asesoramiento Personalizado</div>
+            <h4 class="text-xl font-bold text-white">¿Tiene una necesidad puntual en su empresa?</h4>
+            <p class="text-sm text-slate-400 max-w-xl">Cuéntenos qué proceso desea ordenar o automatizar. Lo orientamos de manera clara, práctica y sin compromisos.</p>
           </div>
-          <button onclick="openTechModal()" type="button" class="whitespace-nowrap inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-semibold border border-cyan-500/40 bg-cyan-950/30 hover:bg-cyan-900/40 text-cyan-300 hover:text-white transition shadow-lg shadow-cyan-950/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400">
-            <svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
-            <span>Ver Tecnologías</span>
-          </button>
+          <a href="https://wa.me/5492494523129?text=Hola%20Tandil%20Labs,%20deseo%20realizar%20una%20consulta%20para%20mi%20empresa" target="_blank" rel="noopener" class="whitespace-nowrap inline-flex items-center gap-2 px-6 py-3.5 rounded-xl text-sm font-bold bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-slate-950 transition shadow-lg shadow-cyan-950/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400">
+            <span>Consultar por WhatsApp</span>
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.087-.177.182-.076.355.101.173.45 1.011 1.092 1.583.824.734 1.517.962 1.734 1.07.217.108.347.094.477-.058.13-.151.55-.636.694-.853.145-.217.289-.181.492-.108.202.072 1.285.606 1.502.714.217.108.361.163.414.253.053.09.053.52-.091.925z"/></svg>
+          </a>
         </div>
       </div>
     </section>
@@ -586,7 +586,7 @@
   <footer class="mt-auto border-t border-brand-border py-12 bg-slate-950">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
       <div class="flex items-center gap-3.5">
-        <img src="assets/logo.png?v=4" alt="Tandil Labs Logo" width="56" height="56" loading="lazy" decoding="async" class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl border border-cyan-500/30 shadow-md shadow-cyan-500/15 object-cover" />
+        <img src="assets/logo.png?v=5" alt="Tandil Labs Logo" width="56" height="56" loading="lazy" decoding="async" class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl border border-cyan-500/30 shadow-md shadow-cyan-500/15 object-cover" />
         <div class="flex flex-col">
           <span class="font-extrabold text-white text-xl tracking-tight">TANDIL<span class="text-cyan-400">LABS</span></span>
           <span class="text-[10px] uppercase tracking-widest text-slate-400 font-semibold">Software Studio</span>
@@ -608,134 +608,6 @@
   <a href="https://wa.me/5492494523129?text=Hola%20Tandil%20Labs,%20deseo%20realizar%20una%20consulta%20para%20mi%20empresa" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-40 w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-white flex items-center justify-center shadow-lg shadow-emerald-500/30 hover:scale-110 transition-all focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-emerald-300" title="Contactar por WhatsApp" aria-label="Abrir conversación de WhatsApp con Tandil Labs">
     <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.087-.177.182-.076.355.101.173.45 1.011 1.092 1.583.824.734 1.517.962 1.734 1.07.217.108.347.094.477-.058.13-.151.55-.636.694-.853.145-.217.289-.181.492-.108.202.072 1.285.606 1.502.714.217.108.361.163.414.253.053.09.053.52-.091.925z"/></svg>
   </a>
-
-  <!-- ================= MODAL: TECNOLOGÍAS & ARQUITECTURA (ACCESSIBLE & ANIMATED) ================= -->
-  <div id="tech-modal" class="fixed inset-0 z-50 hidden opacity-0 transition-opacity duration-300" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-    <!-- Backdrop Blur with click-to-close -->
-    <div class="fixed inset-0 bg-black/85 backdrop-blur-md" onclick="closeTechModal()"></div>
-
-    <!-- Modal Layout Wrapper: closes on outer click, catches inner clicks -->
-    <div class="fixed inset-0 z-10 overflow-y-auto p-4 sm:p-6 lg:p-8 flex items-center justify-center" onclick="handleWrapperClick(event)">
-      <div id="modal-card" class="modal-panel relative w-full max-w-4xl rounded-2xl bg-brand-dark border border-slate-700/90 shadow-2xl overflow-hidden my-8 transform scale-95 transition-all duration-300">
-        
-        <!-- Sticky Modal Header -->
-        <div class="sticky top-0 z-20 px-6 py-5 border-b border-slate-800 flex items-center justify-between bg-slate-900/95 backdrop-blur-md">
-          <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-lg bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 font-mono text-sm font-bold" aria-hidden="true">
-              &lt;/&gt;
-            </div>
-            <div>
-              <h3 id="modal-title" class="text-base sm:text-lg font-bold text-white">Especificaciones de Arquitectura & Tecnologías</h3>
-              <p class="text-xs text-slate-400 font-mono">Tandil Labs Engineering &bull; Tecnologías & Arquitectura de Software</p>
-            </div>
-          </div>
-          <button onclick="closeTechModal()" id="modal-close-btn" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white flex items-center justify-center transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400" aria-label="Cerrar ventana de especificaciones">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-          </button>
-        </div>
-
-        <!-- Body (Deep Technical Content) -->
-        <div class="p-6 sm:p-8 space-y-6 max-h-[72vh] overflow-y-auto text-sm">
-          
-          <!-- Block 1: Architecture -->
-          <div class="p-5 rounded-xl bg-slate-900/50 border border-slate-800">
-            <div class="flex items-center gap-2 mb-2">
-              <span class="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-cyan-950 text-cyan-400 border border-cyan-800/50">01. ARQUITECTURA</span>
-              <h4 class="font-bold text-white text-base">Patrones de Diseño & Modularidad de Software</h4>
-            </div>
-            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-3">
-              Construcción bajo principios <span class="text-cyan-300 font-mono">SOLID</span> y arquitectura por capas desacopladas (Domain / Application / Infrastructure). Implementación de APIs RESTful con especificación formal OpenAPI / Swagger, asegurando contratos estrictos, versionado semántico y desacoplamiento entre el núcleo de negocio y los clientes de presentación.
-            </p>
-            <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-400">
-              <span class="px-2.5 py-1 rounded bg-slate-800 border border-slate-700">RESTful APIs</span>
-              <span class="px-2.5 py-1 rounded bg-slate-800 border border-slate-700">Clean Architecture</span>
-              <span class="px-2.5 py-1 rounded bg-slate-800 border border-slate-700">OpenAPI 3.0</span>
-              <span class="px-2.5 py-1 rounded bg-slate-800 border border-slate-700">RBAC Security</span>
-            </div>
-          </div>
-
-          <!-- Block 2: Backend & Concurrency -->
-          <div class="p-5 rounded-xl bg-slate-900/50 border border-slate-800">
-            <div class="flex items-center gap-2 mb-2">
-              <span class="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-blue-950 text-blue-400 border border-blue-800/50">02. RUNTIME & CONCURRENCIA</span>
-              <h4 class="font-bold text-white text-base">Servicios de Backend & Tareas Asíncronas</h4>
-            </div>
-            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-3">
-              Servicios desarrollados en entornos de alto rendimiento (<span class="text-blue-300 font-mono">Python, Go, Node.js</span>). Manejo asíncrono no bloqueante de I/O, procesamiento diferido mediante colas de tareas tolerantes a fallos (background workers) y schedulers distribuidos para operaciones de sincronización periódica.
-            </p>
-            <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-400">
-              <span class="px-2.5 py-1 rounded bg-slate-800 border border-slate-700">Async I/O</span>
-              <span class="px-2.5 py-1 rounded bg-slate-800 border border-slate-700">Worker Queues</span>
-              <span class="px-2.5 py-1 rounded bg-slate-800 border border-slate-700">Scheduled Jobs</span>
-              <span class="px-2.5 py-1 rounded bg-slate-800 border border-slate-700">Low Latency</span>
-            </div>
-          </div>
-
-          <!-- Block 3: Databases & ACID -->
-          <div class="p-5 rounded-xl bg-slate-900/50 border border-slate-800">
-            <div class="flex items-center gap-2 mb-2">
-              <span class="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-emerald-950 text-emerald-400 border border-emerald-800/50">03. PERSISTENCIA</span>
-              <h4 class="font-bold text-white text-base">Bases de Datos Relacionales & Consistencia Transaccional</h4>
-            </div>
-            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-3">
-              Modelado relacional sobre <span class="text-emerald-300 font-mono">PostgreSQL</span> con cumplimiento estricto de propiedades ACID. Optimización de esquemas, índices compuestos (B-Tree, GIN) para consultas analíticas de alta velocidad, bloqueos de concurrencia a nivel de fila (<span class="text-emerald-300 font-mono">row-level locking</span>) y respaldos automatizados con encriptación off-site.
-            </p>
-            <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-400">
-              <span class="px-2.5 py-1 rounded bg-slate-800 border border-slate-700">PostgreSQL</span>
-              <span class="px-2.5 py-1 rounded bg-slate-800 border border-slate-700">ACID Compliance</span>
-              <span class="px-2.5 py-1 rounded bg-slate-800 border border-slate-700">Automated Backups</span>
-              <span class="px-2.5 py-1 rounded bg-slate-800 border border-slate-700">Data Integrity</span>
-            </div>
-          </div>
-
-          <!-- Block 4: Infrastructure & Linux -->
-          <div class="p-5 rounded-xl bg-slate-900/50 border border-slate-800">
-            <div class="flex items-center gap-2 mb-2">
-              <span class="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-purple-950 text-purple-400 border border-purple-800/50">04. INFRAESTRUCTURA & DEVOPS</span>
-              <h4 class="font-bold text-white text-base">Virtualización en Contenedores & Hardening Linux</h4>
-            </div>
-            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-3">
-              Aislamiento de servicios mediante <span class="text-purple-300 font-mono">Docker</span> y orquestación con Docker Compose. Despliegues en servidores dedicados basados en Linux (Debian / Ubuntu LTS con políticas de hardening, firewalls UFW/iptables, fail2ban y autenticación por llaves SSH). Proxy inverso Nginx con terminación TLS automática y compresión moderna.
-            </p>
-            <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-400">
-              <span class="px-2.5 py-1 rounded bg-slate-800 border border-slate-700">Docker Containers</span>
-              <span class="px-2.5 py-1 rounded bg-slate-800 border border-slate-700">Linux LTS</span>
-              <span class="px-2.5 py-1 rounded bg-slate-800 border border-slate-700">TLS 1.3 / SSL</span>
-              <span class="px-2.5 py-1 rounded bg-slate-800 border border-slate-700">Reverse Proxy</span>
-            </div>
-          </div>
-
-          <!-- Block 5: Interoperability & Security -->
-          <div class="p-5 rounded-xl bg-slate-900/50 border border-slate-800">
-            <div class="flex items-center gap-2 mb-2">
-              <span class="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-amber-950 text-amber-400 border border-amber-800/50">05. SEGURIDAD & PROTOCOLOS</span>
-              <h4 class="font-bold text-white text-base">Webhooks, Idempotencia & Seguridad en Tránsito</h4>
-            </div>
-            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-3">
-              Validación criptográfica de cargas mediante firmas HMAC-SHA256 en webhooks entrantes y salientes. Implementación de reintentos exponenciales con jitter para garantizar entrega idempotente, protección contra ataques de fuerza bruta y almacenamiento seguro de variables de entorno cifradas.
-            </p>
-            <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-400">
-              <span class="px-2.5 py-1 rounded bg-slate-800 border border-slate-700">HMAC-SHA256</span>
-              <span class="px-2.5 py-1 rounded bg-slate-800 border border-slate-700">Idempotency</span>
-              <span class="px-2.5 py-1 rounded bg-slate-800 border border-slate-700">Rate Limiting</span>
-              <span class="px-2.5 py-1 rounded bg-slate-800 border border-slate-700">Encrypted Secrets</span>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Modal Footer -->
-        <div class="px-6 py-4 border-t border-slate-800 bg-slate-900/80 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <span class="text-xs text-slate-400">¿Desea evaluar compatibilidad o integración con su stack actual?</span>
-          <a href="https://wa.me/5492494523129?text=Hola%20Tandil%20Labs,%20deseo%20consultar%20por%20la%20arquitectura%20y%20factibilidad%20t%C3%A9cnica%20de%20un%20proyecto" target="_blank" rel="noopener" class="inline-flex items-center gap-2 bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-4 py-2 rounded-lg text-xs transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400">
-            <span>Conversar con Ingeniería</span>
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </div>
 
   <!-- JavaScript for Accessible Interactions -->
   <script>
@@ -761,94 +633,46 @@
       btn.setAttribute("aria-expanded", "false");
     }
 
-    // ================= MODAL ACCESSIBILITY & ANIMATION =================
-    let lastActiveElement = null;
-
-    function openTechModal() {
-      lastActiveElement = document.activeElement;
-      const modal = document.getElementById("tech-modal");
-      const card = document.getElementById("modal-card");
-      
-      modal.classList.remove("hidden");
-      // Force browser reflow to allow transition
-      void modal.offsetWidth;
-      modal.classList.add("open");
-      modal.classList.remove("opacity-0");
-      card.classList.remove("scale-95");
-      card.classList.add("scale-100");
-      
-      document.body.style.overflow = "hidden";
-      
-      // Accessibility: focus the close button
-      setTimeout(() => {
-        const closeBtn = document.getElementById("modal-close-btn");
-        if (closeBtn) closeBtn.focus();
-      }, 50);
-    }
-
-    function closeTechModal() {
-      const modal = document.getElementById("tech-modal");
-      const card = document.getElementById("modal-card");
-      
-      modal.classList.add("opacity-0");
-      modal.classList.remove("open");
-      card.classList.remove("scale-100");
-      card.classList.add("scale-95");
-      
-      setTimeout(() => {
-        modal.classList.add("hidden");
-        document.body.style.overflow = "";
-        // Restore focus to triggering element
-        if (lastActiveElement) lastActiveElement.focus();
-      }, 250);
-    }
-
-    // Close when clicking outside modal card
-    function handleWrapperClick(event) {
-      if (event.target === event.currentTarget) {
-        closeTechModal();
-      }
-    }
-
-    // Keyboard navigation: Escape key closes modal or mobile menu
+    // Keyboard navigation: Escape key closes mobile menu
     document.addEventListener("keydown", function(event) {
       if (event.key === "Escape") {
-        const modal = document.getElementById("tech-modal");
-        if (!modal.classList.contains("hidden")) {
-          closeTechModal();
-        } else {
-          closeMobileMenu();
-        }
+        closeMobileMenu();
       }
     });
 
-    // ================= INTERACTIVE BENTO PIPELINE SIMULATOR =================
+    // ================= INTERACTIVE BUSINESS WORKFLOW DEMO =================
     let isSimulating = false;
-    function runPipelineSimulation() {
+    function runWorkflowDemo() {
       if (isSimulating) return;
       isSimulating = true;
-      const status = document.getElementById("terminal-status");
-      const output = document.getElementById("terminal-output");
-      const eventId = Math.floor(1000 + Math.random() * 9000);
-      const latency = Math.floor(6 + Math.random() * 8);
+      const status = document.getElementById("workflow-status");
+      const steps = document.getElementById("workflow-steps");
+      const orderNum = Math.floor(1000 + Math.random() * 9000);
 
       if (status) {
-        status.innerHTML = '<span class="text-amber-400 animate-pulse">● Procesando evento en tiempo real...</span>';
+        status.innerHTML = `
+          <span>Estado: <strong class="text-amber-400 animate-pulse">● Procesando operación #${orderNum} en tiempo real...</strong></span>
+          <span class="text-slate-400">Verificando pedido y actualizando stock...</span>
+        `;
       }
 
       setTimeout(() => {
-        if (output) {
-          output.innerHTML = `
-            <div class="flex items-center gap-2"><span class="text-emerald-400">✓</span> <span class="text-slate-400">[01. Ingress]</span> Webhook verificado: Transacción #${eventId} (Firma HMAC válida)</div>
-            <div class="flex items-center gap-2"><span class="text-emerald-400">✓</span> <span class="text-slate-400">[02. Postgres]</span> Transacción ACID commiteada en ${latency}ms</div>
-            <div class="flex items-center gap-2"><span class="text-cyan-400">✓</span> <span class="text-slate-400">[03. Despacho]</span> Notificación emitida al cliente & sincronizada con ERP</div>
-            <div id="terminal-status" class="text-emerald-400 text-[11px] pt-1 font-mono">✓ Pipeline completado con éxito &bull; Latencia total: ${latency + 4}ms (0 errores)</div>
+        if (status) {
+          status.innerHTML = `
+            <span>Estado: <strong class="text-emerald-400">✓ Operación #${orderNum} completada con éxito</strong></span>
+            <span class="text-cyan-300 font-semibold">Resultado: Cliente notificado y stock actualizado en 2 segundos</span>
           `;
+        }
+        if (steps) {
+          steps.classList.add('ring-1', 'ring-cyan-500/40', 'rounded-xl');
+          setTimeout(() => {
+            steps.classList.remove('ring-1', 'ring-cyan-500/40', 'rounded-xl');
+          }, 1500);
         }
         setTimeout(() => {
           isSimulating = false;
         }, 800);
-      }, 650);
+      }, 700);
     }
 
     // ================= SCROLL REVEAL & ANIMATED COUNTERS =================
