@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080">
+  <defs>
+    <!-- Gradiente de sombra horizontal para contraste seguro en Facebook (deja libre la zona del avatar a la izquierda) -->
+    <linearGradient id="facebook-overlay" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#050a12" stop-opacity="0.2" />
+      <stop offset="45%" stop-color="#050a12" stop-opacity="0.3" />
+      <stop offset="70%" stop-color="#050a12" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#050a12" stop-opacity="0.9" />
+    </linearGradient>
+
+    <!-- Resplandor cian -->
+    <filter id="cyan-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="30" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- 1. Fondo Fotográfico: Sierras Reales de Tandil (Panorámica 16:9) -->
+  <g id="capa-fondo">
+    <image href="fondo-sierras-16-9.jpg" width="1920" height="1080" preserveAspectRatio="xMidYMid slice" />
+    <rect width="1920" height="1080" fill="url(#facebook-overlay)" />
+  </g>
+
+  <!-- 2. Resplandor Neón de Marca -->
+  <g id="capa-resplandor" filter="url(#cyan-glow)">
+    <circle cx="1380" cy="460" r="180" fill="#00e5ff" opacity="0.18" />
+  </g>
+
+  <!-- 3. Logotipo Oficial Tandil Labs HD -->
+  <g id="capa-logotipo">
+    <image href="logo-transparent-hd.png" x="1160" y="220" width="440" height="440" />
+  </g>
+
+  <!-- 4. Textos Editables (Abrir en Figma, Illustrator, Inkscape o editar aquí) -->
+  <g id="capa-textos" text-anchor="middle">
+    <!-- Subtítulo / Especialidad -->
+    <text id="txt-subtitulo" x="1380" y="710" font-family="'Segoe UI', Roboto, 'Helvetica Neue', sans-serif" font-weight="800" font-size="32" fill="#38bdf8" letter-spacing="1.5">
+      SOFTWARE &amp; AUTOMATIZACIÓN
+    </text>
+
+    <!-- Detalle / Propuesta de Valor -->
+    <text id="txt-detalle" x="1380" y="755" font-family="'Segoe UI', Roboto, 'Helvetica Neue', sans-serif" font-weight="500" font-size="22" fill="#f1f5f9" letter-spacing="0.5">
+      Sistemas a Medida para Empresas • Tandil, Buenos Aires
+    </text>
+
+    <!-- Web / Contacto -->
+    <text id="txt-web" x="1380" y="795" font-family="'Segoe UI', Roboto, 'Helvetica Neue', sans-serif" font-weight="600" font-size="18" fill="#a5f3fc" letter-spacing="1">
+      tandillabs.pages.dev
+    </text>
+  </g>
+</svg>

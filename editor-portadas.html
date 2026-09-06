@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editor de Portadas para Redes Sociales — Tandil Labs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { background-color: #080c14; color: #f1f5f9; font-family: system-ui, -apple-system, sans-serif; }
+    canvas { max-width: 100%; height: auto; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7); }
+  </style>
+</head>
+<body class="min-h-screen p-4 sm:p-8 flex flex-col items-center">
+
+  <!-- Header -->
+  <header class="max-w-6xl w-full mb-8 flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-slate-800 pb-6">
+    <div class="flex items-center gap-3">
+      <img src="assets/social/logo-transparent-hd.png" alt="Tandil Labs" class="w-12 h-12 object-contain" />
+      <div>
+        <h1 class="text-xl sm:text-2xl font-black text-white tracking-tight">Editor de Portadas — Tandil Labs</h1>
+        <p class="text-xs sm:text-sm text-cyan-400 font-medium">Personalice y descargue portadas con las sierras reales de Tandil para Facebook e Instagram</p>
+      </div>
+    </div>
+    <div class="flex gap-3">
+      <button onclick="descargar('png')" class="bg-cyan-500 hover:bg-cyan-400 text-slate-950 font-bold px-4 py-2.5 rounded-xl text-sm transition shadow-lg shadow-cyan-500/20 flex items-center gap-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+        <span>Descargar PNG</span>
+      </button>
+      <button onclick="descargar('jpeg')" class="bg-slate-800 hover:bg-slate-700 text-white font-bold px-4 py-2.5 rounded-xl text-sm transition flex items-center gap-2">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+        <span>Descargar JPG</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Layout: Controls + Preview -->
+  <main class="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+    
+    <!-- Controls Panel (Left, 5 cols) -->
+    <div class="lg:col-span-5 bg-slate-900/90 border border-slate-800 rounded-2xl p-6 space-y-6 shadow-xl">
+      
+      <!-- Formato / Red Social -->
+      <div>
+        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Formato de Red Social</label>
+        <div class="grid grid-cols-3 gap-2">
+          <button type="button" onclick="setFormato('facebook')" id="btn-fb" class="py-2.5 px-3 rounded-xl text-xs font-bold border border-cyan-500 bg-cyan-500/10 text-cyan-400 text-center transition">
+            Facebook<br><span class="text-[10px] font-normal opacity-70">16:9 (1920x1080)</span>
+          </button>
+          <button type="button" onclick="setFormato('instagram')" id="btn-ig" class="py-2.5 px-3 rounded-xl text-xs font-bold border border-slate-700 bg-slate-800/60 text-slate-300 text-center transition">
+            Instagram<br><span class="text-[10px] font-normal opacity-70">1:1 (1080x1080)</span>
+          </button>
+          <button type="button" onclick="setFormato('story')" id="btn-story" class="py-2.5 px-3 rounded-xl text-xs font-bold border border-slate-700 bg-slate-800/60 text-slate-300 text-center transition">
+            Historia/Reel<br><span class="text-[10px] font-normal opacity-70">9:16 (1080x1920)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Selección de Fondo -->
+      <div>
+        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Fondo Sierras de Tandil</label>
+        <div class="grid grid-cols-2 gap-2">
+          <button type="button" onclick="setFondo('fondo-sierras-16-9.jpg')" class="p-2 rounded-lg border border-slate-700 hover:border-cyan-400 text-left text-xs bg-slate-800/40 text-slate-300 transition">
+            🌅 Atardecer Dorado
+          </button>
+          <button type="button" onclick="setFondo('fondo-sierras-1-1.jpg')" class="p-2 rounded-lg border border-slate-700 hover:border-cyan-400 text-left text-xs bg-slate-800/40 text-slate-300 transition">
+            🌄 Rocas & Valle
+          </button>
+          <button type="button" onclick="setFondo('portada-facebook-crepusculo.jpg')" class="p-2 rounded-lg border border-slate-700 hover:border-cyan-400 text-left text-xs bg-slate-800/40 text-slate-300 transition">
+            🌌 Crepúsculo Azul
+          </button>
+          <label class="p-2 rounded-lg border border-dashed border-slate-700 hover:border-cyan-400 text-center text-xs bg-slate-800/20 text-slate-400 hover:text-cyan-400 cursor-pointer transition flex items-center justify-center">
+            <span>📁 Subir imagen</span>
+            <input type="file" id="file-input" accept="image/*" class="hidden" onchange="cargarFondoPersonalizado(event)" />
+          </label>
+        </div>
+      </div>
+
+      <!-- Textos Personalizables -->
+      <div class="space-y-3">
+        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider">Textos en Portada</label>
+        <div>
+          <span class="text-[11px] text-slate-400">Bajada / Rubro</span>
+          <input type="text" id="inp-subtitulo" value="SOFTWARE & AUTOMATIZACIÓN" oninput="render()" class="w-full mt-1 px-3 py-2 rounded-lg bg-slate-950 border border-slate-800 text-cyan-400 text-sm focus:border-cyan-500 focus:outline-none" />
+        </div>
+        <div>
+          <span class="text-[11px] text-slate-400">Propuesta de Valor / Detalle</span>
+          <input type="text" id="inp-detalle" value="Sistemas a Medida para Empresas • Tandil" oninput="render()" class="w-full mt-1 px-3 py-2 rounded-lg bg-slate-950 border border-slate-800 text-white text-sm focus:border-cyan-500 focus:outline-none" />
+        </div>
+        <div>
+          <span class="text-[11px] text-slate-400">Contacto / Sitio Web</span>
+          <input type="text" id="inp-contacto" value="tandillabs.pages.dev" oninput="render()" class="w-full mt-1 px-3 py-2 rounded-lg bg-slate-950 border border-slate-800 text-slate-300 text-sm focus:border-cyan-500 focus:outline-none" />
+        </div>
+      </div>
+
+      <!-- Ajustes de Diseño -->
+      <div class="space-y-4 pt-3 border-t border-slate-800">
+        <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider">Ajustes Visuales</label>
+        
+        <div>
+          <div class="flex justify-between text-xs text-slate-400 mb-1">
+            <span>Posición de Marca</span>
+            <span id="lbl-pos">Derecha (Ideal Facebook)</span>
+          </div>
+          <div class="grid grid-cols-3 gap-2">
+            <button type="button" onclick="setPosicion('derecha')" id="btn-pos-der" class="py-1.5 rounded-lg border border-cyan-500 bg-cyan-500/10 text-cyan-400 text-xs font-bold">Derecha</button>
+            <button type="button" onclick="setPosicion('centro')" id="btn-pos-cen" class="py-1.5 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 text-xs font-bold">Centro</button>
+            <button type="button" onclick="setPosicion('izquierda')" id="btn-pos-izq" class="py-1.5 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 text-xs font-bold">Izquierda</button>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex justify-between text-xs text-slate-400 mb-1">
+            <span>Oscurecimiento de fondo (Legibilidad)</span>
+            <span id="lbl-dark">40%</span>
+          </div>
+          <input type="range" id="rng-dark" min="0" max="80" value="40" oninput="render()" class="w-full accent-cyan-500" />
+        </div>
+
+        <div>
+          <div class="flex justify-between text-xs text-slate-400 mb-1">
+            <span>Tamaño del Logotipo</span>
+            <span id="lbl-size">100%</span>
+          </div>
+          <input type="range" id="rng-size" min="60" max="140" value="100" oninput="render()" class="w-full accent-cyan-500" />
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Preview Canvas (Right, 7 cols) -->
+    <div class="lg:col-span-7 flex flex-col items-center justify-center bg-slate-950/60 border border-slate-800/80 rounded-2xl p-4 sm:p-6 sticky top-8">
+      <div class="w-full flex justify-between items-center mb-3">
+        <span class="text-xs font-bold text-slate-400 uppercase tracking-widest">Vista Previa en Vivo</span>
+        <span id="canvas-dim" class="text-xs font-mono text-cyan-400 bg-cyan-950/50 px-2 py-0.5 rounded border border-cyan-800/40">1920 x 1080 px</span>
+      </div>
+      <div class="w-full overflow-hidden rounded-xl border border-slate-800 flex items-center justify-center bg-black/40 min-h-[300px]">
+        <canvas id="preview-canvas"></canvas>
+      </div>
+      <p class="text-xs text-slate-500 mt-4 text-center">
+        💡 <strong>Tip para Facebook:</strong> La alineación derecha permite que su foto de perfil circular no tape ni el logo ni los textos en computadoras ni celulares.
+      </p>
+    </div>
+
+  </main>
+
+  <script>
+    const canvas = document.getElementById('preview-canvas');
+    const ctx = canvas.getContext('2d');
+
+    let currentFormato = 'facebook'; // 'facebook', 'instagram', 'story'
+    let currentFondoSrc = 'fondo-sierras-16-9.jpg';
+    let currentPosicion = 'derecha';
+    let imgFondo = new Image();
+    let imgLogo = new Image();
+
+    imgFondo.crossOrigin = "anonymous";
+    imgLogo.crossOrigin = "anonymous";
+
+    // Cargar recursos iniciales
+    imgLogo.src = 'logo-transparent-hd.png';
+    imgFondo.src = currentFondoSrc;
+
+    imgFondo.onload = () => render();
+    imgLogo.onload = () => render();
+
+    function setFormato(fmt) {
+      currentFormato = fmt;
+      
+      document.getElementById('btn-fb').className = fmt === 'facebook' ? 'py-2.5 px-3 rounded-xl text-xs font-bold border border-cyan-500 bg-cyan-500/10 text-cyan-400 text-center transition' : 'py-2.5 px-3 rounded-xl text-xs font-bold border border-slate-700 bg-slate-800/60 text-slate-300 text-center transition';
+      document.getElementById('btn-ig').className = fmt === 'instagram' ? 'py-2.5 px-3 rounded-xl text-xs font-bold border border-cyan-500 bg-cyan-500/10 text-cyan-400 text-center transition' : 'py-2.5 px-3 rounded-xl text-xs font-bold border border-slate-700 bg-slate-800/60 text-slate-300 text-center transition';
+      document.getElementById('btn-story').className = fmt === 'story' ? 'py-2.5 px-3 rounded-xl text-xs font-bold border border-cyan-500 bg-cyan-500/10 text-cyan-400 text-center transition' : 'py-2.5 px-3 rounded-xl text-xs font-bold border border-slate-700 bg-slate-800/60 text-slate-300 text-center transition';
+
+      if (fmt === 'facebook') {
+        setPosicion('derecha');
+        currentFondoSrc = 'fondo-sierras-16-9.jpg';
+      } else if (fmt === 'instagram') {
+        setPosicion('centro');
+        currentFondoSrc = 'fondo-sierras-1-1.jpg';
+      } else {
+        setPosicion('centro');
+      }
+      imgFondo.src = currentFondoSrc;
+      render();
+    }
+
+    function setFondo(src) {
+      currentFondoSrc = src;
+      imgFondo.src = src;
+    }
+
+    function cargarFondoPersonalizado(e) {
+      const file = e.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          imgFondo.src = evt.target.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function setPosicion(pos) {
+      currentPosicion = pos;
+      document.getElementById('btn-pos-der').className = pos === 'derecha' ? 'py-1.5 rounded-lg border border-cyan-500 bg-cyan-500/10 text-cyan-400 text-xs font-bold' : 'py-1.5 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 text-xs font-bold';
+      document.getElementById('btn-pos-cen').className = pos === 'centro' ? 'py-1.5 rounded-lg border border-cyan-500 bg-cyan-500/10 text-cyan-400 text-xs font-bold' : 'py-1.5 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 text-xs font-bold';
+      document.getElementById('btn-pos-izq').className = pos === 'izquierda' ? 'py-1.5 rounded-lg border border-cyan-500 bg-cyan-500/10 text-cyan-400 text-xs font-bold' : 'py-1.5 rounded-lg border border-slate-700 bg-slate-800 text-slate-300 text-xs font-bold';
+      document.getElementById('lbl-pos').innerText = pos === 'derecha' ? 'Derecha (Ideal Facebook)' : (pos === 'centro' ? 'Centrado' : 'Izquierda');
+      render();
+    }
+
+    function render() {
+      // 1. Dimensiones según formato
+      let W = 1920, H = 1080;
+      if (currentFormato === 'instagram') {
+        W = 1080; H = 1080;
+      } else if (currentFormato === 'story') {
+        W = 1080; H = 1920;
+      }
+      canvas.width = W;
+      canvas.height = H;
+      document.getElementById('canvas-dim').innerText = `${W} x ${H} px`;
+
+      // 2. Dibujar fondo fotográfico
+      if (imgFondo.complete && imgFondo.naturalWidth > 0) {
+        const imgRatio = imgFondo.naturalWidth / imgFondo.naturalHeight;
+        const targetRatio = W / H;
+        let sw, sh, sx, sy;
+        if (imgRatio > targetRatio) {
+          sh = imgFondo.naturalHeight;
+          sw = sh * targetRatio;
+          sx = (imgFondo.naturalWidth - sw) / 2;
+          sy = 0;
+        } else {
+          sw = imgFondo.naturalWidth;
+          sh = sw / targetRatio;
+          sx = 0;
+          sy = (imgFondo.naturalHeight - sh) / 2;
+        }
+        ctx.drawImage(imgFondo, sx, sy, sw, sh, 0, 0, W, H);
+      } else {
+        ctx.fillStyle = '#0a101d';
+        ctx.fillRect(0, 0, W, H);
+      }
+
+      // 3. Oscurecimiento de contraste
+      const darkPercent = parseInt(document.getElementById('rng-dark').value, 10);
+      document.getElementById('lbl-dark').innerText = `${darkPercent}%`;
+      const darkAlpha = darkPercent / 100;
+
+      if (darkAlpha > 0) {
+        if (currentPosicion === 'derecha' && currentFormato === 'facebook') {
+          const grad = ctx.createLinearGradient(0, 0, W, 0);
+          grad.addColorStop(0, `rgba(5, 10, 18, ${darkAlpha * 0.3})`);
+          grad.addColorStop(0.4, `rgba(5, 10, 18, ${darkAlpha * 0.4})`);
+          grad.addColorStop(0.7, `rgba(5, 10, 18, ${darkAlpha * 0.95})`);
+          grad.addColorStop(1, `rgba(5, 10, 18, ${darkAlpha})`);
+          ctx.fillStyle = grad;
+          ctx.fillRect(0, 0, W, H);
+        } else if (currentPosicion === 'izquierda') {
+          const grad = ctx.createLinearGradient(W, 0, 0, 0);
+          grad.addColorStop(0, `rgba(5, 10, 18, ${darkAlpha * 0.3})`);
+          grad.addColorStop(0.7, `rgba(5, 10, 18, ${darkAlpha * 0.95})`);
+          grad.addColorStop(1, `rgba(5, 10, 18, ${darkAlpha})`);
+          ctx.fillStyle = grad;
+          ctx.fillRect(0, 0, W, H);
+        } else {
+          const rad = ctx.createRadialGradient(W/2, H * 0.4, 100, W/2, H * 0.4, W * 0.65);
+          rad.addColorStop(0, `rgba(5, 10, 18, ${darkAlpha * 0.3})`);
+          rad.addColorStop(0.6, `rgba(5, 10, 18, ${darkAlpha * 0.7})`);
+          rad.addColorStop(1, `rgba(5, 10, 18, ${darkAlpha})`);
+          ctx.fillStyle = rad;
+          ctx.fillRect(0, 0, W, H);
+        }
+      }
+
+      // 4. Parámetros del logo
+      const sizeMult = parseInt(document.getElementById('rng-size').value, 10) / 100;
+      document.getElementById('lbl-size').innerText = `${Math.round(sizeMult * 100)}%`;
+
+      let logoW = (currentFormato === 'facebook' ? 440 : 400) * sizeMult;
+      let logoH = logoW;
+
+      let logoX, logoY;
+      if (currentPosicion === 'derecha') {
+        logoX = currentFormato === 'facebook' ? (W * 0.68 - logoW / 2) : (W * 0.65 - logoW / 2);
+        logoY = currentFormato === 'facebook' ? (H * 0.22) : (H * 0.20);
+      } else if (currentPosicion === 'izquierda') {
+        logoX = W * 0.32 - logoW / 2;
+        logoY = H * 0.22;
+      } else {
+        logoX = (W - logoW) / 2;
+        logoY = currentFormato === 'story' ? H * 0.28 : H * 0.18;
+      }
+
+      // Resplandor neón detrás del logo
+      ctx.save();
+      ctx.shadowColor = '#00e5ff';
+      ctx.shadowBlur = 40;
+      const glowGrad = ctx.createRadialGradient(logoX + logoW/2, logoY + logoH/2, 10, logoX + logoW/2, logoY + logoH/2, logoW/2 + 20);
+      glowGrad.addColorStop(0, 'rgba(0, 229, 255, 0.25)');
+      glowGrad.addColorStop(1, 'rgba(0, 229, 255, 0)');
+      ctx.fillStyle = glowGrad;
+      ctx.beginPath();
+      ctx.arc(logoX + logoW/2, logoY + logoH/2, logoW/2 + 20, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+
+      // Dibujar logo
+      if (imgLogo.complete && imgLogo.naturalWidth > 0) {
+        ctx.drawImage(imgLogo, logoX, logoY, logoW, logoH);
+      }
+
+      // 5. Dibujar textos
+      const subtitulo = document.getElementById('inp-subtitulo').value.trim();
+      const detalle = document.getElementById('inp-detalle').value.trim();
+      const contacto = document.getElementById('inp-contacto').value.trim();
+
+      const centerX = logoX + logoW / 2;
+      let textY = logoY + logoH + (currentFormato === 'story' ? 45 : 30);
+
+      ctx.textAlign = 'center';
+
+      // Subtítulo / Especialidad
+      if (subtitulo) {
+        const subSize = (currentFormato === 'facebook' ? 32 : 30) * (W / 1920 * 0.7 + 0.3);
+        ctx.font = `bold ${subSize}px system-ui, sans-serif`;
+        ctx.fillStyle = '#38bdf8';
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.8)';
+        ctx.shadowBlur = 10;
+        ctx.fillText(subtitulo, centerX, textY);
+        textY += subSize * 1.45;
+      }
+
+      // Detalle
+      if (detalle) {
+        const detSize = (currentFormato === 'facebook' ? 22 : 22) * (W / 1920 * 0.7 + 0.3);
+        ctx.font = `500 ${detSize}px system-ui, sans-serif`;
+        ctx.fillStyle = '#f1f5f9';
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.8)';
+        ctx.shadowBlur = 8;
+        ctx.fillText(detalle, centerX, textY);
+        textY += detSize * 1.5;
+      }
+
+      // Contacto / Web
+      if (contacto) {
+        const conSize = (currentFormato === 'facebook' ? 18 : 18) * (W / 1920 * 0.7 + 0.3);
+        ctx.font = `600 ${conSize}px system-ui, monospace`;
+        ctx.fillStyle = '#a5f3fc';
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.8)';
+        ctx.shadowBlur = 6;
+        ctx.fillText(contacto, centerX, textY);
+      }
+    }
+
+    function descargar(formato) {
+      const mime = formato === 'png' ? 'image/png' : 'image/jpeg';
+      const ext = formato === 'png' ? 'png' : 'jpg';
+      const filename = `portada_tandil_labs_${currentFormato}_${Date.now()}.${ext}`;
+      
+      const link = document.createElement('a');
+      link.download = filename;
+      link.href = canvas.toDataURL(mime, 0.95);
+      link.click();
+    }
+  </script>
+
+</body>
+</html>
