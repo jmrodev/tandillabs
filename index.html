@@ -211,13 +211,13 @@
 
   <!-- ================= NAVBAR ================= -->
   <header class="sticky top-0 z-40 backdrop-blur-md bg-brand-dark/90 border-b border-brand-border">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex items-center justify-between min-h-[5.5rem]">
-      <!-- Logo & Brand Identity -->
-      <a href="#" class="flex items-center gap-3.5 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-xl p-1" aria-label="Tandil Labs - Inicio">
-        <img src="assets/logo.png?v=4" alt="Tandil Labs Logo" width="64" height="64" decoding="async" class="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl border border-cyan-500/40 group-hover:border-cyan-400 transition-all duration-300 shadow-lg shadow-cyan-500/25 group-hover:scale-105 object-cover" />
-        <div class="flex flex-col">
-          <span class="font-extrabold text-xl sm:text-2xl tracking-tight text-white group-hover:text-cyan-400 transition">TANDIL<span class="text-cyan-400">LABS</span></span>
-          <span class="text-[11px] sm:text-xs uppercase tracking-widest text-slate-400 font-semibold">Software Studio</span>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 sm:h-24 flex items-center justify-between">
+      <!-- Logo & Brand Identity (Ocupa todo el alto de la barra y no se pierde) -->
+      <a href="#" class="flex items-center gap-3 sm:gap-4 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400 rounded-2xl h-full py-2" aria-label="Tandil Labs - Inicio">
+        <img src="assets/logo.png?v=5" alt="Tandil Labs Logo" width="80" height="80" decoding="async" class="h-full w-auto aspect-square rounded-2xl border border-cyan-500/50 group-hover:border-cyan-400 transition-all duration-300 shadow-xl shadow-cyan-500/30 group-hover:scale-105 object-contain" />
+        <div class="flex flex-col justify-center">
+          <span class="font-extrabold text-xl sm:text-2xl md:text-3xl tracking-tight text-white group-hover:text-cyan-400 transition leading-tight">TANDIL<span class="text-cyan-400">LABS</span></span>
+          <span class="text-[10px] sm:text-xs uppercase tracking-widest text-slate-400 font-semibold">Software Studio</span>
         </div>
       </a>
 
@@ -273,16 +273,10 @@
       <div class="absolute top-1/3 right-10 w-[350px] h-[350px] bg-blue-600/10 blur-[120px] rounded-full pointer-events-none"></div>
 
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-        <!-- Brand Emblem & Badge -->
-        <div class="flex flex-col items-center justify-center gap-4 mb-8">
-          <div class="relative group">
-            <div class="absolute -inset-2 bg-gradient-to-r from-cyan-500/30 via-sky-400/20 to-blue-600/30 rounded-3xl blur-xl opacity-60 group-hover:opacity-100 transition duration-500"></div>
-            <img src="assets/logo.png?v=4" alt="Tandil Labs Logo" width="112" height="112" fetchpriority="high" decoding="async" class="relative w-24 h-24 sm:w-28 sm:h-28 rounded-2xl border border-cyan-500/40 shadow-2xl shadow-cyan-500/20 object-cover transform hover:scale-105 transition duration-300" />
-          </div>
-          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-cyan-500/30 bg-cyan-950/40 text-cyan-400 text-xs font-semibold uppercase tracking-wider">
-            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
-            Software & Automatización Empresarial
-          </div>
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-950/40 text-cyan-400 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-8 shadow-sm shadow-cyan-500/10">
+          <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+          Software & Automatización Empresarial
         </div>
 
         <!-- Headline (High hierarchy, maximum contrast) -->
