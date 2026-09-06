@@ -1,0 +1,7 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemap oficial
+Sitemap: https://tandillabs.pages.dev/sitemap.xml
+Sitemap: https://jmrodev.github.io/tandillabs/sitemap.xml
